@@ -1,5 +1,4 @@
 const AWS = require('aws-sdk');
-const { v4: uuidv4 } = require('uuid');
 
 const s3 = new AWS.S3({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -12,6 +11,7 @@ const getPresignedUrl = async (req, res) => {
     const { filename, fileType } = req.query;
     
     // Generate unique key for file to avoid collisions
+    const { v4: uuidv4 } = await import('uuid');
     const key = `chat_media/${uuidv4()}_${filename}`;
 
     const params = {
