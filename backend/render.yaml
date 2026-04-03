@@ -1,0 +1,41 @@
+services:
+  # Backend API Service
+  - type: web
+    name: repstats-backend
+    env: node
+    buildCommand: "npm install && npm run build"
+    startCommand: "npm start"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGO_URI
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: REDIS_URL
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+
+  # PostgreSQL Database
+  - type: pserv
+    name: repstats-postgres
+    plan: free
+    env: docker
+    dockerfilePath: ./postgres/Dockerfile
+    envVars:
+      - key: POSTGRES_DB
+        value: repstats
+      - key: POSTGRES_USER
+        value: postgres
+      - key: POSTGRES_PASSWORD
+        generateValue: true
+
+  # Redis Cache
+  - type: redis
+    name: repstats-redis
+    plan: free

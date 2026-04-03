@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: repstats-frontend
+    env: static
+    buildCommand: "npm install && npm run build"
+    publishDir: dist
+    envVars:
+      - key: NODE_ENV
+        value: production
+    routes:
+      - type: rewrite
+        source: /api/*
+        destination: https://repstats-backend.onrender.com/api/*
