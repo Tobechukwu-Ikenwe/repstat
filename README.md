@@ -109,23 +109,6 @@ This documentation is designed for:
 - Invite system with shareable links
 - Smooth transitions and animations
 
-## 📊 Documentation Statistics
-
-- **Total Pages**: ~15-20 pages
-- **Code Files Analyzed**: 10+ major files
-- **Features Covered**: 15+ key features
-- **Explanation Level**: Beginner-friendly
-- **Generated**: Automatically via Python script
-
-## 🔍 Code Analysis Approach
-
-The documentation generator:
-1. **Analyzes project structure** automatically
-2. **Reads all source files** in context
-3. **Provides explanations** for each component
-4. **Organizes content** logically by development phase
-5. **Formats code** for readability
-6. **Creates professional PDF** output
 
 ## 📝 Notes
 
